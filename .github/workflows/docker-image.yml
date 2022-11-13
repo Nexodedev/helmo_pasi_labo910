@@ -21,7 +21,7 @@ jobs:
         username: ${{ secrets.REGISTRY_USERNAME }}
         password: ${{ secrets.REGISTRY_PASSWORD }}
     - name: Build the Docker image
-      run: docker build . --file Dockerfile -t ${{ secrets.ACR_LOGIN_SERVER }}/my-image-name:${{ github.run_number }}
+      run: docker build . --file Dockerfile -t ${{ secrets.ACR_LOGIN_SERVER }}/docker-image:${{ github.run_number }}
       
     - name: Scan image
       uses: Azure/container-scan@v0
