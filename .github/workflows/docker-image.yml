@@ -28,7 +28,7 @@ jobs:
       with:
         image-name: ${{ secrets.ACR_LOGIN_SERVER }}/my-image-name:${{ github.run_number }}
         severity-threshold: CRITICAL
-        run-quality-checks: true     
+        run-quality-checks: False     
     - name: Push image
       run: |
         docker push ${{ secrets.ACR_LOGIN_SERVER }}/my-image-name:${{ github.run_number }}
